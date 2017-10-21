@@ -6,11 +6,7 @@ video=pafy.new(url)
 
 #Retrieving video properties
 title=video.title
-rating=video.rating
 duration=video.duration
-likes=video.likes
-dislikes=video.dislikes
-category=video.category
 date_published=video.published
 uploader=video.username
 best_getVideo=video.getbestvideo
@@ -21,8 +17,15 @@ best_getAudio=video.getbestaudio
 file_format_audio=best_getAudio.extension
 file_size_audio=best_getAudio.filesize()
 
+print("Name: "+title)
+print("duration: "+duration)
+print("Uploaded On: "+date_published)
+print("Uploaded by: "+uploader)
+
 #Downloading the video with the best quality
-best_getVideo.download(filepath="/Movies",quiet=False,callback=None,meta=False,remux_audio=False)
+print("Downloading "+title+" with "+max_resolution_video+" resolution in "+file_format_video+" format")
+best_getVideo.download(filepath="/Movies/"+title+file_format_video,quiet=False,callback=None,meta=False,remux_audio=False)
 
 #Download the audio with best quality
-best_getAudio.download(filepath="/Audio",quiet=False,callback=None,meta=False,remux_audio=False)
+print("Downloading audio "+title+" in "+file_format_audio+" format"
+best_getAudio.download(filepath="/Audio"+title+file_format_audio,quiet=False,callback=None,meta=False,remux_audio=False)
