@@ -24,8 +24,10 @@ print("Uploaded by: "+uploader)
 
 #Downloading the video with the best quality
 print("Downloading "+title+" with "+max_resolution_video+" resolution in "+file_format_video+" format")
+print("Size: "+file_size_video)
 best_getVideo.download(filepath="/Movies/"+title+file_format_video,quiet=False,callback=None,meta=False,remux_audio=False)
 
 #Download the audio with best quality
 print("Downloading audio "+title+" in "+file_format_audio+" format"
+print("Size: "+file_size_audio)
 best_getAudio.download(filepath="/Audio"+title+file_format_audio,quiet=False,callback=None,meta=False,remux_audio=False)
