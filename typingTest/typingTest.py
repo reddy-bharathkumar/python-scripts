@@ -17,8 +17,6 @@ print("3: Hard")
 
 input_choice=input()
 
-text=""
-
 if input_choice==1:
     pass
 elif input_choice==2:
