@@ -18,13 +18,17 @@ print("3: Hard")
 input_choice=input()
 
 if input_choice==1:
-    pass
+    para_key=str(randint(1,11))
+    text=paragraphs.paradict("easy",para_key)
+    print(text)
 elif input_choice==2:
     para_key=str(randint(1,11))
-    text=paragraphs.paradict(para_key)
+    text=paragraphs.paradict("medium",para_key)
     print(text)
 elif input_choice==3:
-    pass
+    para_key=str(randint(1,11))
+    text=paragraphs.paradict("hard",para_key)
+    print(text)
 else:
     print("Please choose a level between 1-3")
     exit()
