@@ -6,7 +6,7 @@ Created on Tue Oct 24 18:40:28 2017
 @author: bharath
 """
 
-def paradict(index):
+def paradict(mode,index):
     paragraphs={
             "easy":{"1":" Bar codes give the necessary information regarding a product to the customer as well as to the owner, such as price, category etc. It can give necessary information like inventory details, tax payments to the company management",
                     "2":"Taekwondo is an. excellent way to learn self-defence. You learn the basic techniques of self-defence, and also how to control your temper if somebody teases you or makes fun of you or hits you.",
@@ -48,4 +48,4 @@ def paradict(index):
                     "12":"Pronunciation — think of Psyche! Is a paling stout and spikey? Won't it make you lose your wits, Writing groats and saying grits? It's a dark abyss or tunnel: Strewn with stones, stowed, solace, gunwale, Islington and Isle of Wight, Housewife, verdict and indict."
                     }
             }
-    return paragraphs[index]
+    return paragraphs[mode][index]
