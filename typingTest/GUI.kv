@@ -1,0 +1,39 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+    transition: FadeTransition()
+    HomeScreen:
+    InputScreen:
+    ResultScreen:
+
+<HomeScreen>:
+    name: "homeScreen"
+    BoxLayouts:
+        orientation: 'vertical'
+        Button:
+            text: "Choose a mode"
+        Button:
+            text: "Easy"
+            on_release: app.root.current = "inputScreen"
+        Button:
+            text: "Medium"
+            on_release: app.root.current = "inputScreen"
+        Button:
+            text: "Hard"
+            on_release: app.root.current = "inputScreen"
+<InputScreen>:
+    name: "inputScreen"
+    BoxLayouts:
+        orientation: 'vertical'
+        Label:
+        TextInput:
+            multiline: True
+            font_size: 30
+        Button:
+            text: "Submit"
+            on_release: app.root.current = "resultScreen"
+<ResultScreen>:
+    name: "resultScreen"
+    Button:
+        text: "Wanna Try again!"
+        on_release: app.root.current = "homeScreen"
