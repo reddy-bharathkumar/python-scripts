@@ -11,14 +11,27 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.uix.boxlayout import BoxLayout
 
+import typingTest
+import paragraphs
+
 class BoxLayouts(BoxLayout):
-    pass
+    app=ObjectProperty(None)
+    
 class HomeScreen(Screen):
     pass
+    
 class InputScreen(Screen):
-    pass
+    def buttonPressed(self, instance):
+        mode=self.get_id(instance)
+        print(mode)
+        para_key=str(randint(1,11))
+        print(para_key)
+        text=paragraphs.paradict(mode,para_key)
+        print(text)
+        
 class ResultScreen(Screen):
     pass
+
 class ScreenManagement(ScreenManager):
     pass
 
