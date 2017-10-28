@@ -11,31 +11,43 @@ ScreenManagement:
     BoxLayouts:
         orientation: 'vertical'
         Button:
+            id: mode
             text: "Choose a mode"
             height: 40
             width: 100
         Button:
+            id: easy
             text: "Easy"
+            on_press: root.app.InputScreen.buttonPressed(self)
             on_release: app.root.current = "inputScreen"
         Button:
+            id: medium
             text: "Medium"
+            on_press: root.app.InputScreen.buttonPressed(self)
             on_release: app.root.current = "inputScreen"
         Button:
+            id: hard
             text: "Hard"
+            on_press: root.app.InputScreen.buttonPressed(self)
             on_release: app.root.current = "inputScreen"
 <InputScreen>:
     name: "inputScreen"
     BoxLayouts:
         orientation: 'vertical'
         Label:
+            id: userInput
+            text: buttonPressed(self)
         TextInput:
-            multiline: True
+            multiline: False
             font_size: 30
+            on_text_validate: on_enter(self)
         Button:
             text: "Submit"
             on_release: app.root.current = "resultScreen"
 <ResultScreen>:
     name: "resultScreen"
+    Label:
+        text: app.root.
     Button:
-        text: "Wanna Try again!"
+        text: "Wanna Type again!"
         on_release: app.root.current = "homeScreen"
